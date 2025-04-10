@@ -1,0 +1,64 @@
+.gradient-text{
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+  }
+
+  .custom-btn {
+    background: linear-gradient(45deg, #499aef, #00C6FF);
+    color: white;
+    border: none;
+    transition: 0.3s ease;
+  }
+  
+  .custom-btn:hover {
+    background: linear-gradient(45deg, #00C6FF, #499aef);
+    transform: scale(1.05);
+  }
+  
+  
+  .custom-width {
+    width: 100px;
+    /* padding: 5px; */
+  }
+  
+  body.dark-mode {
+    background-color: #121212;
+    color: white;
+  }
+  
+  .navbar-dark-mode {
+    background-color: #1f1f1f !important;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .navbar {
+    --bs-navbar-padding-x: 0rem !important;
+    --bs-navbar-padding-y: 0rem !important;
+  }
+  
+  
+.border-custom{
+    border: solid transparent;
+    border-width: 0.1px 2px 2px 2px;
+    border-radius: 15px;
+    padding: 0; /* reset padding */
+    background-image:
+      linear-gradient(#fff, #fff),
+      linear-gradient(90deg, #007cf0, #00dfd8);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    box-sizing: border-box;
+
+}
+
+.custom-underline {
+    text-decoration: underline;
+    text-decoration-color: #0097FF; 
+    text-underline-offset: 3px;
+  }

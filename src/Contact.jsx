@@ -7,84 +7,91 @@ const Contact = () => {
     email: "",
     msg: "",
   });
+
   const inputEvent = (event) => {
     const { name, value } = event.target;
-    setData((preval) => {
-      return {
-        ...preval,
-        [name]: value,
-      };
-    });
+    setData((preval) => ({
+      ...preval,
+      [name]: value,
+    }));
   };
+
   const formSubmit = (e) => {
     e.preventDefault();
-    alert(`${data.fname}`);
+    alert(`Message successfully sent 🎉\nName: ${data.fname}`);
+    setData({
+      fname: "",
+      phone: "",
+      email: "",
+      msg: "",
+    });
   };
+
   return (
     <>
       <div className="my-5">
-        <h1 className="text-center">Contact page</h1>
+        <h1 className="text-center gradient-text custom-underline">Contact Page</h1>
       </div>
       <div className="container container_div">
         <div className="row">
           <div className="col-10 col-md-6 mx-auto">
             <form onSubmit={formSubmit}>
-              <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">
-                  Full Name
-                </label>
+              <div className="mb-3">
+                <label htmlFor="nameInput" className="form-label">Full Name</label>
                 <input
                   type="text"
-                  class="form-control"
-                  id="exampleFormControlInput1"
-                  onChange={inputEvent}
+                  className="form-control"
+                  id="nameInput"
                   name="fname"
-                  value={data.name}
-                  placeholder="name@example.com"
+                  value={data.fname}
+                  onChange={inputEvent}
+                  placeholder="John Doe"
+                  required
                 />
-                <label for="exampleFormControlInput1" class="form-label">
-                  Phone No
-                </label>
+
+                <label htmlFor="phoneInput" className="form-label mt-3">Phone No</label>
                 <input
                   type="text"
-                  class="form-control"
-                  id="exampleFormControlInput1"
-                  onChange={inputEvent}
+                  className="form-control"
+                  id="phoneInput"
                   name="phone"
                   value={data.phone}
-                  placeholder="name@example.com"
-                />
-                <label for="exampleFormControlInput1" class="form-label">
-                  Email address
-                </label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="exampleFormControlInput1"
                   onChange={inputEvent}
+                  placeholder="9876543210"
+                  required
+                />
+
+                <label htmlFor="emailInput" className="form-label mt-3">Email Address</label>
+                <input
+                  type="email"
+                  className="form-control"
+                  id="emailInput"
                   name="email"
                   value={data.email}
-                  placeholder="name@example.com"
+                  onChange={inputEvent}
+                  placeholder="example@email.com"
+                  required
                 />
               </div>
-              <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">
-                  Message
-                </label>
+
+              <div className="mb-3">
+                <label htmlFor="messageInput" className="form-label">Message</label>
                 <textarea
-                  class="form-control"
-                  id="exampleFormControlTextarea1"
+                  className="form-control"
+                  id="messageInput"
                   rows="3"
-                  onChange={inputEvent}
                   name="msg"
                   value={data.msg}
-                  placeholder="name@example.com"
+                  onChange={inputEvent}
+                  placeholder="Your message here..."
+                  required
                 ></textarea>
-                <div class="col-auto">
-                  <button type="submit" class="btn btn-primary mb-3 mt-3">
-                    Confirm identity
-                  </button>
-                </div>
+              </div>
+
+              <div className="col-auto">
+                <button type="submit" className="btn btn-primary mb-3 mt-3">
+                  Confirm identity
+                </button>
               </div>
             </form>
           </div>
